@@ -19,7 +19,6 @@ class QuotesSpider(scrapy.Spider):
     ### Actually, the only thing that changes is how the requests are sent and retrieved - They pass through the Splash middleware
     ### This function will get text, author and tags info for each quote and yield it
     ### If the next page element is present, it will yield another request to Splash, which will then be processed by the parse function again
-    ### Wait time of 3 seconds makes sure that everything will be properly rendered, and it won't get "half-rendered" pages (might happen if the page is heavy on JS)
     def parse(self, response): 
         next_page = str(response.css('.next > a::attr(href)').extract_first())
 
