@@ -3,6 +3,8 @@ import re
 from scrapy_splash import SplashRequest 
 
 class QuotesSpider(scrapy.Spider):
+    """Scrapes books.toscrape.com/js using scrapy + splash"""
+    
     name = 'quotesjs'
     allowed_domains = ['quotes.toscrape.com']
     start_urls = ['http://quotes.toscrape.com/js/']
